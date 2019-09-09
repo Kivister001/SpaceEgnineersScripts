@@ -227,7 +227,7 @@ void CheckCD(IMyTerminalBlock t_object)
 	var customData = t_object.CustomData.Split('\n');
 
 	// Create new default customData if a too short one is found and set the default font size 
-	if (customData.Length <= (defaultData.Length - 7)) { //7 is the number of char in "default"
+	if (string.IsNullOrWhiteSpace(Me.CustomData)) { //7 is the number of char in "default" (customData.Length <= (defaultData.Length - 7))
 		string newCustomData = "";
 
 		foreach (var item in defaultData) {
